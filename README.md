@@ -117,7 +117,7 @@ Finally, RevIN denormalization restores the original scale.
 | `seq_len` | from config | Input look-back window length |
 | `pred_len` | from config | Prediction horizon length |
 | `enc_in` | from config | Number of input variables |
-| `period_len` | `24` | Configured period length (hours for hourly data; `15` for 15-min ETTm) |
+| `period_len` | `24` | Configured period length in samples (`24` for hourly data; `96` for 15-min ETTm) |
 | `latent_dim` | `8` | Hidden dimension of each phase token |
 | `phase_encoder_hidden` | `32` | Hidden size of the phase embedding MLP |
 | `predictor_hidden` | `64` | Hidden size of the predictor MLP |
@@ -128,7 +128,7 @@ Finally, RevIN denormalization restores the original scale.
 | `revin_affine` | `False` | Whether RevIN has learnable affine parameters |
 | `revin_eps` | `1e-5` | RevIN epsilon for numerical stability |
 
-**Period selection:** CAPA uses frequency-domain analysis to identify the dominant spectral component. For the benchmark datasets: `P=24` for ETTh, Weather, Electricity, and Traffic; `P=15` for the 15-minute ETTm datasets.
+**Period selection:** CAPA uses frequency-domain analysis to identify the dominant spectral component. For the benchmark datasets: `P=24` for ETTh, Weather, Electricity, and Traffic; `P=96` for the 15-minute ETTm datasets.
 
 ---
 
